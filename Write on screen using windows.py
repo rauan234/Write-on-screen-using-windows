@@ -8,10 +8,11 @@ import math
 import sys
 
 
-WindowMakingDelay = 0.1
+WindowMakingDelay = 0.25
+StartDelay = 3
 ApproxWindowsCount = 150
 ApproxWindowsSpacing = 30
-ScreenSize = (1600, 1000)
+ScreenSize = (1600, 800)
 DrawingStyle = 'PyQT5'
 
 
@@ -84,6 +85,8 @@ def compute_windows_coords_list(array01, desired_w_count):
 
 
 def main():
+    sleep(StartDelay)
+
     image = read_image_from_file('Picture.jpg')
     blackwhite_array = convert_img_to_01(image)
     windows_to_be_made = compute_windows_coords_list(blackwhite_array, ApproxWindowsCount)
